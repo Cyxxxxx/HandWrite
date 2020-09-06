@@ -188,6 +188,7 @@ public class LinkedList {
 
     @Override
     public String toString(){
+        if(size==0) return null;
         StringBuilder sb = new StringBuilder();
         ListNode cur = head;
         while(cur != null){

@@ -9,7 +9,6 @@ public class Test {
         l.add(6);
         l.add(1);
 
-
         // moveToHead 测试 正常
         System.out.println(l.toString()); // 3,6,1,
         System.out.println(l.moveToHead(1)); // true
@@ -23,27 +22,23 @@ public class Test {
 
         // removeLast 测试 正常
         l.removeLast();
-        System.out.println(l.toString()+" | removeLast");
-
+        System.out.println(l.toString()+" | removeLast"); // 3,1, | removeLast
 
         // remove(int index) 测试 正常
-        System.out.println(l.size());           //3
-        System.out.println(l.remove(2)); //1
-        System.out.println(l.toString());
+        System.out.println(l.size());           // 2
+        System.out.println(l.remove(2)); // -1
+        System.out.println(l.toString());  // 3,1,
         System.out.println(l.remove(0)); //3
-        System.out.println(l.toString());
-        System.out.println(l.remove(0)); //6
-        System.out.println(l.toString());
-        System.out.println(l.remove(0)); //-1
-        System.out.println(l.toString());
+        System.out.println(l.toString()); // 1,
+        System.out.println(l.remove(0)); //1
+        System.out.println(l.toString()); // null
 
         // set(int index, int val) 测试 正常
         l.add(9);
         l.add(7);
-        System.out.println(l.size());           //2
+        System.out.println(l.toString()); // 9,7,
         System.out.println(l.set(0,3));         //9
-        System.out.println(l.get(0));           //3
-
+        System.out.println(l.toString()); // 3,7,
 
     }
 }
