@@ -3,9 +3,9 @@ package DataStructure.LinkedList;
 //手写一个双向链表
 public class LinkedList {
     //头尾节点
-    ListNode head=null,tail=null;
+    private ListNode head=null,tail=null;
     //链表长度
-    int size=0;
+    private int size=0;
 
     //添加元素方法
     public void add(int val){
@@ -109,6 +109,92 @@ public class LinkedList {
                 cur=cur.next;
         }
         return cur;
+    }
+
+
+
+    // LRU 需要的方法
+
+    // 将节点移到链头
+    public boolean moveToHead(int val){
+        // 用 node记录被移动节点
+        ListNode node;
+        // 当链表中不存在这个值，返回false
+        if ((node = getNodeByVal(val)) == null)
+            return false;
+
+        if(node == head) // 若 node本就是头节点，无需移动
+            return true;
+
+        // 处理 node 的前后关系
+        // 当 node不是尾节点
+        if (node != tail){
+            removeNode(node);
+        }else{ // node是尾节点时，先尾删
+            removeLast();
+        }
+
+        //将node头插
+        addFirst(node);
+        return true;
+    }
+
+    // 通过值寻找节点, 时间复杂度 O(n)
+    private ListNode getNodeByVal(int val){
+        ListNode cur = head;
+        while (cur != null){
+            if(cur.val == val) return cur;
+            cur = cur.next;
+        }
+        return null;
+    }
+
+    // 查询链表是否包含所传入值的方法
+    public boolean contains(int val){
+        return getNodeByVal(val)!=null;
+    }
+
+    // 头插方法
+    private void addFirst(ListNode node){
+        node.next = head;
+        head.pre = node;
+        node.pre = null;
+        head = node;
+        ++size;
+    }
+
+    // 删除节点方法
+    private void removeNode(ListNode node){
+        ListNode nodePre = node.pre;
+        ListNode nodeNext = node.next;
+        nodePre.next = nodeNext;
+        nodeNext.pre = nodePre;
+        --size;
+    }
+
+    // 尾删方法
+    public int removeLast(){
+        // 存储链尾的值
+        int res = tail.val;
+
+        //尾删
+        tail=tail.pre;
+        tail.next.pre=null;
+        tail.next=null;
+        --size;
+
+        return res;
+    }
+
+    @Override
+    public String toString(){
+        StringBuilder sb = new StringBuilder();
+        ListNode cur = head;
+        while(cur != null){
+            sb.append(cur.val).append(",");
+            cur = cur.next;
+        }
+        return sb.toString();
     }
 
     //内部类，双向链表的核心
