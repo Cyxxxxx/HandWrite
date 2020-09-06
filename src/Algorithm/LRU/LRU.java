@@ -3,16 +3,25 @@ package Algorithm.LRU;
 import java.util.*;
 import java.util.LinkedList;
 
-//手写一个LRU容器
+/**
+ * 手写一个LRU容器
+ * @author YuC
+ */
 public class LRU<K,V> {
 
-    // 容器大小
+    /**
+     * 容器大小
+     */
     private int size;
 
-    // 链表存储key
+    /**
+     * 链表存储key
+     */
     private LinkedList<K> linkedList;
 
-    // HashMap存储键值对
+    /**
+     * HashMap存储键值对
+     */
     private HashMap<K,V> hashMap;
 
     public LRU(int size){
@@ -23,7 +32,9 @@ public class LRU<K,V> {
 
     public void put(K key,V val){
         //检测链表中是否已有该键
-        if(linkedList.contains(key)){ // 链表中存在该键时
+
+        // 链表中存在该键时
+        if(linkedList.contains(key)){
             //将该键的位置置于链表头
             linkedList.remove(key);
             linkedList.addFirst(key);
@@ -50,7 +61,8 @@ public class LRU<K,V> {
 
     public V get(K key){
         //检测链表中是否存在该key
-        if (linkedList.contains(key)){ // 当链表中存在该key时
+        // 当链表中存在该key时
+        if (linkedList.contains(key)){
             // 将key置于链头
             linkedList.remove(key);
             linkedList.addFirst(key);
@@ -66,8 +78,9 @@ public class LRU<K,V> {
         }else {
             StringBuilder sb = new StringBuilder();
             Iterator iterator = linkedList.iterator();
-            while(iterator.hasNext())
+            while(iterator.hasNext()) {
                 sb.append(iterator.next()).append(",");
+            }
             return sb.toString();
         }
     }

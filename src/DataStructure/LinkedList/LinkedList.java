@@ -1,13 +1,25 @@
 package DataStructure.LinkedList;
 
-//手写一个双向链表
+/**
+ * 手写一个双向链表
+ * @author YuC
+ */
 public class LinkedList {
-    //头尾节点
+
+    /**
+     * 头尾节点
+     */
     private ListNode head=null,tail=null;
-    //链表长度
+
+    /**
+     * 链表长度
+     */
     private int size=0;
 
-    //添加元素方法
+    /**
+     * 添加元素方法
+     * @param val
+     */
     public void add(int val){
         //往链表中添加元素时，链表长度自增
         ++size;
@@ -25,12 +37,19 @@ public class LinkedList {
         }
     }
 
-    //通过索引获取元素方法
+    /**
+     * 通过索引获取元素方法
+     * @param index
+     * @return
+     */
     public int get(int index){
         ListNode res=getNode(index);
         //当getNode方法传出null时,返回-1
-        if(res==null) return -1;
-        else return res.val;
+        if(res==null){
+            return -1;
+        }else{
+            return res.val;
+        }
     }
 
     //通过索引修改元素方法
@@ -44,14 +63,21 @@ public class LinkedList {
         return oldVal;
     }
 
-    //通过索引删除元素方法
+    /**
+     * 通过索引删除元素方法
+     * @param index
+     * @return
+     */
     public int remove(int index){
         ListNode res=getNode(index);
         //当getNode方法传出null时,返回-1
-        if(res==null) return -1;
+        if(res==null){
+            return -1;
+        }
         //删除节点后size自减
         //当size大于1时,正常自减
-        if(size--<=1){//当size小于等于1,删除链表中最后一个元素,头尾指针置空
+        //当size小于等于1,删除链表中最后一个元素,头尾指针置空
+        if(size--<=1){
             head=null;
             tail=null;
             return res.val;
@@ -78,15 +104,19 @@ public class LinkedList {
         return res.val;
     }
 
-    //返回链表长度
+    /**
+     * 返回链表长度
+     * @return
+     */
     public int size(){
         return size;
     }
 
     public ListNode getNode(int index) {
         //当传入索引大于链表长度所支持的最大索引，返回null
-        if(index>size-1)
+        if(index>size-1) {
             return null;
+        }
         //在链表中要通过索引获取元素，要对整个链表进行遍历，时间复杂度为O(n)
         /*
         ListNode cur=head;
@@ -101,12 +131,14 @@ public class LinkedList {
             //索引也要反过来
             index=size-index-1;
             //反过来遍历
-            while(index-->0)
-                cur=cur.pre;
+            while(index-->0) {
+                cur = cur.pre;
+            }
         }else{
             cur=head;
-            while(index-->0)
+            while(index-->0){
                 cur=cur.next;
+            }
         }
         return cur;
     }
@@ -115,16 +147,25 @@ public class LinkedList {
 
     // LRU 需要的方法
 
-    // 将节点移到链头
+    /**
+     * 将节点移到链头
+     * @param val
+     * @return
+     */
     public boolean moveToHead(int val){
         // 用 node记录被移动节点
         ListNode node;
-        // 当链表中不存在这个值，返回false
-        if ((node = getNodeByVal(val)) == null)
-            return false;
 
-        if(node == head) // 若 node本就是头节点，无需移动
+        // 当链表中不存在这个值，返回false
+        if ((node = getNodeByVal(val)) == null){
+            return false;
+        }
+
+
+        // 若 node本就是头节点，无需移动
+        if(node == head){
             return true;
+        }
 
         // 处理 node 的前后关系
         // 当 node不是尾节点
@@ -139,22 +180,36 @@ public class LinkedList {
         return true;
     }
 
-    // 通过值寻找节点, 时间复杂度 O(n)
+    /**
+     * 通过值寻找节点, 时间复杂度 O(n)
+     * @param val
+     * @return
+     */
     private ListNode getNodeByVal(int val){
         ListNode cur = head;
         while (cur != null){
-            if(cur.val == val) return cur;
+            if(cur.val == val){
+                return cur;
+            }
             cur = cur.next;
         }
         return null;
     }
 
-    // 查询链表是否包含所传入值的方法
+    /**
+     * 查询链表是否包含所传入值
+     * @param val
+     * @return
+     */
     public boolean contains(int val){
         return getNodeByVal(val)!=null;
     }
 
-    // 头插方法
+
+    /**
+     * 头插方法
+     * @param node
+     */
     private void addFirst(ListNode node){
         node.next = head;
         head.pre = node;
@@ -163,7 +218,11 @@ public class LinkedList {
         ++size;
     }
 
-    // 删除节点方法
+
+    /**
+     * 删除节点方法
+     * @param node
+     */
     private void removeNode(ListNode node){
         ListNode nodePre = node.pre;
         ListNode nodeNext = node.next;
@@ -172,7 +231,10 @@ public class LinkedList {
         --size;
     }
 
-    // 尾删方法
+    /**
+     * 尾删方法
+     * @return
+     */
     public int removeLast(){
         // 存储链尾的值
         int res = tail.val;
@@ -188,7 +250,9 @@ public class LinkedList {
 
     @Override
     public String toString(){
-        if(size==0) return null;
+        if(size==0){
+            return null;
+        }
         StringBuilder sb = new StringBuilder();
         ListNode cur = head;
         while(cur != null){
@@ -198,7 +262,10 @@ public class LinkedList {
         return sb.toString();
     }
 
-    //内部类，双向链表的核心
+
+    /**
+     * 内部类，双向链表的核心
+     */
     private class ListNode{
         int val;
         ListNode pre,next;

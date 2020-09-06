@@ -1,11 +1,26 @@
 package DataStructure.LinkedStack;
 
-//基于双链表的栈
+/**
+ * 基于双链表的栈
+ * @author YuC
+ */
 public class LinkedStack {
 
+    /**
+     * 指向链表尾节点
+     */
     private Node tail=null;
+
+    /**
+     * 记录栈长度
+     */
     private int size=0;
 
+    /**
+     * 入栈
+     * @param val
+     * @return
+     */
     public int push(int val){
         //若栈中没有元素
         if(size++==0){
@@ -13,38 +28,59 @@ public class LinkedStack {
             tail=new Node(val);
         }else{ //若栈中存在元素，则对栈内链表进行尾插
             tail.next=new Node(val);
-            tail.next.pre=tail;//将新栈尾的pre指针指向旧栈尾
+            //将新栈尾的pre指针指向旧栈尾
+            tail.next.pre=tail;
             tail=tail.next;
         }
-        return tail.val;//返回栈尾元素值（也就是刚插入的元素）
+        //返回栈尾元素值（也就是刚插入的元素）
+        return tail.val;
     }
 
+    /**
+     * 出栈
+     * @return
+     */
     public int pop(){
         //若栈为空，返回-1
-        if(size==0) return-1;
-        //若栈非空：
-        --size; //栈的长度自减
+        if(size==0){
+            return-1;
+        }
+        //若栈非空, 栈的长度自减
+        --size;
         Node res=tail;
-        tail=tail.pre; //尾指针指向原链表尾的前一个元素
-        return res.val; //返回原栈顶元素
+        //尾指针指向原链表尾的前一个元素
+        tail=tail.pre;
+        //返回原栈顶元素
+        return res.val;
     }
 
-    //返回栈顶元素
+    /**
+     * 返回栈顶元素
+     * @return
+     */
     public int peek(){
         return tail.val;
     }
 
-    //判断栈是否为空
+    /**
+     * 判断栈是否为空
+     * @return
+     */
     public boolean isEmpty(){
         return size==0;
     }
 
-    //获取栈当前长度
+    /**
+     * 获取栈当前长度
+     * @return
+     */
     public int size(){
         return size;
     }
 
-    //双链表节点类
+    /**
+     * 双链表节点类
+     */
     private class Node{
         //前后指针
         Node next,pre;
