@@ -1,6 +1,6 @@
 package Algorithm.LRU;
 
-public class LRUTest {
+public class Test {
     public static void main(String[] args) {
         LRU<Integer,String> lru = new LRU<>(3);
         lru.put(1,"a");
