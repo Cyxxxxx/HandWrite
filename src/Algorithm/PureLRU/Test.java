@@ -23,6 +23,4 @@ public class Test  {
         System.out.println(PureLRU.contains(4)); // true
         System.out.println(PureLRU.isEmpty()); // false
     }
-
-
 }
