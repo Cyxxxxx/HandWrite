@@ -92,6 +92,11 @@ public class PureLRU<K,V> {
      * @return
      */
     private Entry findEntryByKey(K key){
+        /**
+         * 进行判空操作，有两个好处
+         * 1. 使缓存能够正确存储以null为key的数据
+         * 2. 避免key.equals调用引发空指针异常
+         */
         // 当key为空时，寻找链表中key为空的节点
         if (key == null){
             for(Entry cur = head; cur != null; cur = cur.next) {
@@ -102,7 +107,7 @@ public class PureLRU<K,V> {
         }else {
             // key不为空时，寻找key和传入值相等的节点
             for(Entry cur = head; cur != null; cur = cur.next){
-                if(cur.key.equals(key)){
+                if(key.equals(cur.key)){
                     return cur;
                 }
             }
