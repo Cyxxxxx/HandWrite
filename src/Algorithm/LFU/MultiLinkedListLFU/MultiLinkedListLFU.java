@@ -4,13 +4,15 @@ import java.util.HashMap;
 
 public class MultiLinkedListLFU<K, V> {
 
+    /**
+     * 记录<键key,频次freq>的哈希图，用于快速定位节点
+     */
     private final HashMap<K, Integer> KEY_FREQ_MAP = new HashMap<>();
 
     /**
      * 头/尾链表
      */
     private MultiLinkedList headList, tailList;
-
 
     /**
      * 容器中链表的数量
@@ -72,7 +74,7 @@ public class MultiLinkedListLFU<K, V> {
      * @param key
      * @param val
      */
-    void freqIncrease(MultiLinkedList list, K key, V val) {
+    private void freqIncrease(MultiLinkedList list, K key, V val) {
         // 将节点放置到比原链表频次+1的新链表
         // 当list不存在前链表，说明list为头链表headList
         if (list.pre == null) {
@@ -81,6 +83,7 @@ public class MultiLinkedListLFU<K, V> {
             // 记录到KEY_FREQ_MAP
             KEY_FREQ_MAP.put(key, headList.freq);
         } else {
+            // 当list存在前链表，将节点在前链表上进行头插
             list.pre.put(key, val);
             // 记录到KEY_FREQ_MAP
             KEY_FREQ_MAP.put(key, list.pre.freq);
@@ -147,8 +150,10 @@ public class MultiLinkedListLFU<K, V> {
         return list;
     }
 
+    /**
+     * 新增一条频次比当前头链表多1的链表，并将其作为新头链表
+     */
     private void newHeadList() {
-        // 新增一条频次比当前头链表多1的链表，并将其作为新头链表
         MultiLinkedList newList = new MultiLinkedList(headList.freq + 1);
         newList.next = headList;
         headList.pre = newList;
@@ -214,6 +219,12 @@ public class MultiLinkedListLFU<K, V> {
             this.freq = freq;
         }
 
+        /**
+         * 添加数据方法
+         *
+         * @param key
+         * @param val
+         */
         void put(K key, V val) {
             // 链表为空/不为空，分情况讨论
             if (size == 0) {
@@ -249,10 +260,15 @@ public class MultiLinkedListLFU<K, V> {
 
         /**
          * 尾删
+         * <p>
+         * 当链表中仅剩一个元素，并触发尾删时
+         * 只改变size数量，让外部缓存容器放弃该链表
          */
         void removeLast() {
-            tail.pre.next = null;
-            tail = tail.pre;
+            if (size <= 1) {
+                tail.pre.next = null;
+                tail = tail.pre;
+            }
             --size;
         }
 
@@ -274,14 +290,18 @@ public class MultiLinkedListLFU<K, V> {
                 } else if (key.equals(head.key)) {
                     removeFirst();
                 } else {
-                    Entry pre = entry.pre;
-                    Entry next = entry.next;
-                    pre.next = next;
-                    next.pre = pre;
-                    --size;
+                    removeEntry(entry);
                 }
                 return true;
             }
+        }
+
+        void removeEntry(Entry entry){
+            Entry pre = entry.pre;
+            Entry next = entry.next;
+            pre.next = next;
+            next.pre = pre;
+            --size;
         }
 
         /**
@@ -334,6 +354,7 @@ public class MultiLinkedListLFU<K, V> {
         class Entry {
             K key;
             V val;
+
             Entry pre, next;
 
             Entry(K key, V val) {
