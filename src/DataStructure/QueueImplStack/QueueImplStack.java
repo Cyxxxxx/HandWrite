@@ -20,9 +20,7 @@ import java.util.LinkedList;
  * 你所使用的语言也许不支持队列。 你可以使用 list 或者 deque（双端队列）来模拟一个队列 , 只要是标准的队列操作即可。
  * 你可以假设所有操作都是有效的（例如, 对一个空的栈不会调用 pop 或者 top 操作）。
  *
- * 来源：力扣（LeetCode）
  * 链接：https://leetcode-cn.com/problems/implement-stack-using-queues
- * 著作权归领扣网络所有。商业转载请联系官方授权，非商业转载请注明出处。
  */
 public class QueueImplStack {
 
