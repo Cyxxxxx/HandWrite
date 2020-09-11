@@ -57,8 +57,7 @@ public class StackImplQueue {
      * 将栈1倒腾到栈2上的方法
      */
     public void stackTransfer() {
-        int size = s1.size();
-        while (size-- > 0) {
+        while (!s1.isEmpty()) {
             s2.push(s1.pop());
         }
     }
