@@ -5,6 +5,10 @@
 
 建议先看基本概念再考虑看源码
 
+Email: 732298225@qq.com
+
+Blog: https://blog.csdn.net/Yuc0114
+
 # 目录
 
 ## 数据结构
@@ -27,6 +31,4 @@
 ### LFU算法
  - [使用多重双向链表实现LFU](https://github.com/Cyxxxxx/HandWrite/tree/master/src/Algorithm/LFU/MultiLinkedListLFU)
 
-Email: 732298225@qq.com
 
-Blog: https://blog.csdn.net/Yuc0114
