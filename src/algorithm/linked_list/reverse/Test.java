@@ -1,4 +1,4 @@
-package Algorithm.LinkedList.Reverse;
+package algorithm.linked_list.reverse;
 
 /**
  * 链表反转 测试类

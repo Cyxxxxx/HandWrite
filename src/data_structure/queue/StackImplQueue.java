@@ -1,4 +1,4 @@
-package DataStructure.StackImplQueue;
+package data_structure.queue;
 
 import java.util.Stack;
 

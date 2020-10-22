@@ -1,4 +1,4 @@
-package DataStructure.LinkedQueue;
+package data_structure.queue;
 
 //
 
@@ -81,6 +81,21 @@ public class LinkedQueue {
         Node(int val){
             this.val=val;
         }
+    }
+
+    /**
+     * main方法，测试用
+     * @param args
+     */
+    public static void main(String[] args) {
+        LinkedQueue lq=new LinkedQueue();
+        lq.offer(3);
+        lq.offer(6);
+        lq.offer(9);
+        System.out.println(lq.peek()); //3
+        while(!lq.isEmpty())
+            System.out.println(lq.poll()); //依次输出3,6,9
+        System.out.println(lq.isEmpty()); //true
     }
 }
 
