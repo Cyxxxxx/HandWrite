@@ -14,23 +14,23 @@ Blog: https://blog.csdn.net/Yuc0114
 ## 数据结构
 
 ### 链表
- - [双向链表实现LinkedList](https://github.com/Cyxxxxx/HandWrite/tree/master/src/DataStructure/LinkedList)
+ - [双向链表实现LinkedList](https://github.com/Cyxxxxx/HandWrite/blob/master/src/data_structure/list/LinkedList.java)
  
 ### 队列 & 栈
- - [单向链表实现队列](https://github.com/Cyxxxxx/HandWrite/tree/master/src/DataStructure/LinkedQueue)
- - [双向链表实现栈](https://github.com/Cyxxxxx/HandWrite/tree/master/src/DataStructure/LinkedStack)
- - [双队列实现栈](https://github.com/Cyxxxxx/HandWrite/tree/master/src/DataStructure/QueueImplStack)
- - [双栈实现队列](https://github.com/Cyxxxxx/HandWrite/tree/master/src/DataStructure/StackImplQueue)
+ - [单向链表实现队列](https://github.com/Cyxxxxx/HandWrite/blob/master/src/data_structure/queue/LinkedQueue.java)
+ - [双向链表实现栈](https://github.com/Cyxxxxx/HandWrite/blob/master/src/data_structure/stack/LinkedStack.java)
+ - [双队列实现栈](https://github.com/Cyxxxxx/HandWrite/blob/master/src/data_structure/stack/QueueImplStack.java)
+ - [双栈实现队列](https://github.com/Cyxxxxx/HandWrite/blob/master/src/data_structure/queue/StackImplQueue.java)
 
 ## 算法
 ### 链表相关
- - [反转链表](https://github.com/Cyxxxxx/HandWrite/tree/master/src/Algorithm/LinkedList/Reverse)
+ - [反转链表](https://github.com/Cyxxxxx/HandWrite/tree/master/src/algorithm/linked_list/reverse)
 
 ### LRU算法
- - [LinkedList + HashMap 实现LRU](https://github.com/Cyxxxxx/HandWrite/tree/master/src/Algorithm/LRU)
- - [不使用Java集合框架实现LRU](https://github.com/Cyxxxxx/HandWrite/tree/master/src/Algorithm/PureLRU)
+ - [LinkedList + HashMap 实现LRU](https://github.com/Cyxxxxx/HandWrite/blob/master/src/algorithm/lru/LRU.java)
+ - [不使用Java集合框架实现LRU](https://github.com/Cyxxxxx/HandWrite/blob/master/src/algorithm/lru/PureLRU.java)
  
 ### LFU算法
- - [使用多重双向链表实现LFU](https://github.com/Cyxxxxx/HandWrite/tree/master/src/Algorithm/LFU/MultiLinkedListLFU)
+ - [使用多重双向链表实现LFU](https://github.com/Cyxxxxx/HandWrite/blob/master/src/algorithm/lfu/MultiLinkedListLFU.java)
 
 
