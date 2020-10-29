@@ -1,45 +1,22 @@
 package algorithm.sort;
 
-import java.util.Arrays;
+import algorithm.sort.util.Swaper;
+import algorithm.sort.util.Tester;
 
 /**
  * 冒泡排序
  * 时间复杂度：O(n^2)
+ * @Author yuc
  */
 public class Bubble {
 
-    /**
-     * 交换数组中的两项
-     *
-     * @param arr
-     * @param i
-     * @param j
-     */
-    private static void swap(int[] arr, int i, int j) {
-        int tmp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = tmp;
-    }
-
-    /**
-     * 异或交换
-     * @param arr
-     * @param i
-     * @param j
-     */
-    private static void optSwap(int[] arr,int i,int j){
-        // 使用异或的特性优化交换
-        arr[i] ^= arr[j];
-        arr[j] ^= arr[i];
-        arr[i] ^= arr[j];
-    }
 
     public static void holyShitSort(int[] arr){
         for(int i=0;i<arr.length;++i){
-            System.out.println("第"+(i+1)+"趟排序开始时，数组为："+Arrays.toString(arr));
+//            System.out.println("第"+(i+1)+"趟排序开始时，数组为："+Arrays.toString(arr));
             for(int j=0;j<arr.length-1;++j){
                 if(arr[j]>arr[j+1]){
-                    optSwap(arr,j,j+1);
+                    Swaper.nor(arr,j,j+1);
                 }
             }
         }
@@ -54,11 +31,11 @@ public class Bubble {
         for (int i = 0; i < arr.length - 1; ++i) {
             // 每一趟排序都会把数组[i,j]范围中最小的项移到 i的位置
             // 再让i自增，减少下一趟排序需要遍历的数组大小
-            System.out.println("第"+(i+1)+"趟排序开始时，数组为："+Arrays.toString(arr));
-            System.out.println("需要遍历的数组大小为"+(arr.length-i));
+//            System.out.println("第"+(i+1)+"趟排序开始时，数组为："+Arrays.toString(arr));
+//            System.out.println("需要遍历的数组大小为"+(arr.length-i));
             for (int j = arr.length - 1; j > i; --j) {
                 if (arr[j - 1] > arr[j]) {
-                    optSwap(arr, j - 1, j);
+                    Swaper.nor(arr, j - 1, j);
                 }
             }
         }
@@ -68,7 +45,7 @@ public class Bubble {
 //            // 再让 i自减，减少下一趟排序需要遍历的数组大小
 //            for (int j = 0; j < i; ++j) {
 //                if (arr[j] > arr[j + 1]) {
-//                    swap(arr, j, j + 1);
+//                    Swaper.nor(arr, j, j + 1);
 //                }
 //            }
 //        }
@@ -84,10 +61,10 @@ public class Bubble {
         for (int i = 0; i < arr.length - 1; ++i) {
             // 每一趟排序开始前，默认这一趟排序是顺序的，直到遇见需要交换的地方
             isSeq = true;
-            System.out.println("第"+(i+1)+"趟排序开始时，数组为："+Arrays.toString(arr));
+//            System.out.println("第"+(i+1)+"趟排序开始时，数组为："+Arrays.toString(arr));
             for (int j = arr.length - 1; j > i; --j) {
                 if (arr[j - 1] > arr[j]) {
-                    optSwap(arr, j - 1, j);
+                    Swaper.nor(arr, j - 1, j);
                     isSeq = false;
                 }
             }
@@ -99,7 +76,7 @@ public class Bubble {
     }
 
     public static void main(String[] args) {
-        int[] tmp = Tester.randomArr(1000);
+        int[] tmp = Tester.randomArr(10000);
         int[] arr = tmp.clone();
         long start = System.currentTimeMillis();
         optSort(arr);
