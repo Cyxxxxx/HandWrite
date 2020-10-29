@@ -23,8 +23,8 @@ public class Selection {
                 }
             }
             // 当minIdx发生变动，证明数组区间[i+1,j]中有比arr[i]小的值，进行交换
-            if(minIdx!=i){
-                Swaper.nor(arr,i,minIdx);
+            if (minIdx != i) {
+                Swaper.nor(arr, i, minIdx);
             }
         }
     }
@@ -36,7 +36,7 @@ public class Selection {
         long start = System.currentTimeMillis();
         sort(arr);
         long end = System.currentTimeMillis();
-        System.out.println("选择排序结束，耗时"+(end-start)+"ms");
+        System.out.println("选择排序结束，耗时" + (end - start) + "ms");
         System.out.println(Arrays.toString(arr));
     }
 }
