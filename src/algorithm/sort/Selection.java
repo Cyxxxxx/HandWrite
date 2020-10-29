@@ -30,10 +30,13 @@ public class Selection {
     }
 
     public static void main(String[] args) {
-        int[] tmp = Tester.randomArr(10);
+        int[] tmp = Tester.randomArr(10000);
         int[] arr = tmp.clone();
         System.out.println(Arrays.toString(arr));
+        long start = System.currentTimeMillis();
         sort(arr);
+        long end = System.currentTimeMillis();
+        System.out.println("选择排序结束，耗时"+(end-start)+"ms");
         System.out.println(Arrays.toString(arr));
     }
 }
