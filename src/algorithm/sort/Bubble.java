@@ -16,7 +16,7 @@ public class Bubble {
 //            System.out.println("第"+(i+1)+"趟排序开始时，数组为："+Arrays.toString(arr));
             for(int j=0;j<arr.length-1;++j){
                 if(arr[j]>arr[j+1]){
-                    Swaper.nor(arr,j,j+1);
+                    Swaper.exec(arr,j,j+1);
                 }
             }
         }
@@ -35,7 +35,7 @@ public class Bubble {
 //            System.out.println("需要遍历的数组大小为"+(arr.length-i));
             for (int j = arr.length - 1; j > i; --j) {
                 if (arr[j - 1] > arr[j]) {
-                    Swaper.nor(arr, j - 1, j);
+                    Swaper.exec(arr, j - 1, j);
                 }
             }
         }
@@ -64,7 +64,7 @@ public class Bubble {
 //            System.out.println("第"+(i+1)+"趟排序开始时，数组为："+Arrays.toString(arr));
             for (int j = arr.length - 1; j > i; --j) {
                 if (arr[j - 1] > arr[j]) {
-                    Swaper.nor(arr, j - 1, j);
+                    Swaper.exec(arr, j - 1, j);
                     isSeq = false;
                 }
             }

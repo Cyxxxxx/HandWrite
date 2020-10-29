@@ -3,8 +3,6 @@ package algorithm.sort;
 import algorithm.sort.util.Swaper;
 import algorithm.sort.util.Tester;
 
-import java.util.Arrays;
-
 /**
  * 插入排序
  * 时间复杂度：O(n^2)
@@ -16,7 +14,7 @@ public class Insert {
         for(int i=0;i<arr.length-1;++i){
             for(int j=i+1;j>0;--j){
                 if(arr[j-1]>arr[j]){
-                    Swaper.nor(arr,j-1,j);
+                    Swaper.exec(arr,j-1,j);
                 }else {
                     break;
                 }
