@@ -1,4 +1,4 @@
-package algorithm.sort;
+package algorithm.sort.util;
 
 /**
  * 排序算法 - 测试用例生成
