@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /**
  * 冒泡排序
- * 时间复杂度：O(n)
+ * 时间复杂度：O(n^2)
  */
 public class Bubble {
 
