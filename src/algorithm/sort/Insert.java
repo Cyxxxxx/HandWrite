@@ -58,8 +58,10 @@ public class Insert {
     }
 
     public static void main(String[] args) {
-        int[] tmp = Tester.randomArr(100000);
+        int n = 100_000;
+        int[] tmp = Tester.randomArr(n);
         int[] arr = tmp.clone();
+        System.out.println("对有"+n+"个元素的随机数组进行排序：");
 //        System.out.println(Arrays.toString(arr));
         long start = System.currentTimeMillis();
         sort(arr);
