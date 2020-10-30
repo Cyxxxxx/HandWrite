@@ -23,14 +23,12 @@ public class Shell {
              * arr[0], arr[3], arr[6], arr[9]
              * arr[1], arr[4], arr[7]
              * arr[2], arr[5], arr[8]
+             * 然后相当于分别对每组使用直接插入排序
              */
-            for(int k=0;k<incr;++k){
-                // 相当于对每组做直接插入排序
-                for(int i=k+incr;i<len;i+=incr){
-                    for(int j=i;j>k;j-=incr){
-                        if(arr[j]<arr[j-incr]){
-                            Swaper.exec(arr,j,j-incr);
-                        }
+            for(int i=incr;i<len;++i){
+                if(arr[i]<arr[i-incr]){
+                    for(int j=i;j>=incr && arr[j]<arr[j-incr];j-=incr){
+                        Swaper.exec(arr,j,j-incr);
                     }
                 }
             }
@@ -38,11 +36,11 @@ public class Shell {
     }
 
     public static void main(String[] args) {
-        int n = 10;
+        int n = 100;
         int[] tmp = Tester.randomArr(n);
         int[] arr = tmp.clone();
         System.out.println("对有" + n + "个元素的随机数组进行排序：");
-//        System.out.println(Arrays.toString(arr));
+        System.out.println(Arrays.toString(arr));
         long start = System.currentTimeMillis();
         sort(arr);
         long end = System.currentTimeMillis();
