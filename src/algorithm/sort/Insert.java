@@ -7,12 +7,17 @@ import java.util.Arrays;
 
 /**
  * 插入排序
- * 时间复杂度：O(n^2)
  *
  * @Author yuc
  */
 public class Insert {
 
+    /**
+     * 直接插入排序
+     * 时间复杂度 O(n^2)
+     *
+     * @param arr
+     */
     public static void sort(int[] arr) {
         for (int i = 0; i < arr.length - 1; ++i) {
             // 每趟插入排序前，数组区间[0,i]经过上一趟插入排序处理后，是有序的
@@ -26,6 +31,12 @@ public class Insert {
         }
     }
 
+    /**
+     * 二分查找插入排序
+     * 时间复杂度 O(nlogn)
+     *
+     * @param arr
+     */
     public static void optSort(int[] arr) {
         for (int i = 0; i < arr.length - 1; ++i) {
             int j = i + 1;
@@ -34,8 +45,8 @@ public class Insert {
             // 存储需要插入的元素
             int tmp = arr[j];
             // 将数组区间(insertIdx,j)中的元素往后移一位
-            for(;j>insertIdx;--j){
-                arr[j]=arr[j-1];
+            for (; j > insertIdx; --j) {
+                arr[j] = arr[j - 1];
             }
             // 为指定下标赋值
             arr[insertIdx] = tmp;
@@ -61,7 +72,7 @@ public class Insert {
         int n = 100_000;
         int[] tmp = Tester.randomArr(n);
         int[] arr = tmp.clone();
-        System.out.println("对有"+n+"个元素的随机数组进行排序：");
+        System.out.println("对有" + n + "个元素的随机数组进行排序：");
 //        System.out.println(Arrays.toString(arr));
         long start = System.currentTimeMillis();
         sort(arr);
