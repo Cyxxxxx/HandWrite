@@ -36,17 +36,17 @@ public class Shell {
     }
 
     public static void main(String[] args) {
-        int n = 100;
+        int n = 1_000_000;
         int[] tmp = Tester.randomArr(n);
         int[] arr = tmp.clone();
         System.out.println("对有" + n + "个元素的随机数组进行排序：");
-        System.out.println(Arrays.toString(arr));
+//        System.out.println(Arrays.toString(arr));
         long start = System.currentTimeMillis();
         sort(arr);
         long end = System.currentTimeMillis();
         System.out.println("插入排序结束，耗时" + (end - start) + "ms");
 
-        System.out.println(Arrays.toString(arr));
+//        System.out.println(Arrays.toString(arr));
     }
 
 }
