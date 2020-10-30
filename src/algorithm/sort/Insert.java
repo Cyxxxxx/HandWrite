@@ -21,12 +21,9 @@ public class Insert {
     public static void sort(int[] arr) {
         for (int i = 0; i < arr.length - 1; ++i) {
             // 每趟插入排序前，数组区间[0,i]经过上一趟插入排序处理后，是有序的
-            for (int j = i + 1; j > 0; --j) {
-                if (arr[j - 1] > arr[j]) {
-                    Swaper.exec(arr, j - 1, j);
-                } else {
-                    break;
-                }
+            // 当遍历时遇到相对有序，直接进行下一趟排序
+            for (int j = i + 1; j > 0 && arr[j-1]>arr[j]; --j) {
+                Swaper.exec(arr, j - 1, j);
             }
         }
     }
