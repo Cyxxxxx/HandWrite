@@ -7,6 +7,7 @@ import java.util.Arrays;
 
 /**
  * 插入排序
+ * 时间复杂度 O(n^2)
  *
  * @Author yuc
  */
@@ -14,7 +15,6 @@ public class Insert {
 
     /**
      * 直接插入排序
-     * 时间复杂度 O(n^2)
      *
      * @param arr
      */
@@ -22,7 +22,7 @@ public class Insert {
         for (int i = 0; i < arr.length - 1; ++i) {
             // 每趟插入排序前，数组区间[0,i]经过上一趟插入排序处理后，是有序的
             // 当遍历时遇到相对有序，直接进行下一趟排序
-            for (int j = i + 1; j > 0 && arr[j-1]>arr[j]; --j) {
+            for (int j = i + 1; j > 0 && arr[j - 1] > arr[j]; --j) {
                 Swaper.exec(arr, j - 1, j);
             }
         }
@@ -30,7 +30,6 @@ public class Insert {
 
     /**
      * 二分查找插入排序
-     * 时间复杂度 O(nlogn)
      *
      * @param arr
      */
