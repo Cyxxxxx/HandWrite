@@ -46,7 +46,7 @@ public class Shell {
         long start = System.currentTimeMillis();
         sort(arr);
         long end = System.currentTimeMillis();
-        System.out.println("插入排序结束，耗时" + (end - start) + "ms");
+        System.out.println("希尔排序结束，耗时" + (end - start) + "ms");
 //        System.out.println(Arrays.toString(arr));
     }
 
