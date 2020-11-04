@@ -28,6 +28,9 @@ Blog: https://blog.csdn.net/Yuc0114
  - [选择排序](https://github.com/Cyxxxxx/HandWrite/blob/master/src/algorithm/sort/Selection.java)
  - [插入排序](https://github.com/Cyxxxxx/HandWrite/blob/master/src/algorithm/sort/Insert.java)
  - [希尔排序](https://github.com/Cyxxxxx/HandWrite/blob/master/src/algorithm/sort/Shell.java)
+ - [归并排序](https://github.com/Cyxxxxx/HandWrite/blob/master/src/algorithm/sort/Merge.java)
+ - [快速排序](https://github.com/Cyxxxxx/HandWrite/blob/master/src/algorithm/sort/Quick.java)
+ - [堆排序](https://github.com/Cyxxxxx/HandWrite/blob/master/src/algorithm/sort/Heap.java)
 ### 链表相关
  - [反转链表](https://github.com/Cyxxxxx/HandWrite/tree/master/src/algorithm/linked_list/reverse)
 
