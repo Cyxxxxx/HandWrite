@@ -29,6 +29,7 @@ public class Heap {
     }
 
     private static void heapAdjust(int[] heap, int i, int len) {
+        // 记录传入节点值
         int tmp = heap[i];
         // 从i节点的左子节点开始，即i*2+1
         for (int k = i * 2 + 1; k < len; k = k * 2 + 1) {
@@ -36,6 +37,7 @@ public class Heap {
             if (k + 1 < len && heap[k] < heap[k + 1]) {
                 ++k;
             }
+            // 若最大的子节点比传入节点大，则将最大的子节点的位置移到传入节点上
             if (heap[k] > tmp) {
                 heap[i] = heap[k];
                 i = k;
@@ -43,7 +45,7 @@ public class Heap {
                 break;
             }
         }
-        // tmp值放在最终的位置
+        // 传入节点值放在最终的位置
         heap[i] = tmp;
     }
 
