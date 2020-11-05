@@ -5,6 +5,8 @@ package design_patterns.singleton;
  * 优点：
  *   1. 和DCL的懒汉式能达到同样的效果
  *   2. 实现简单
+ * 缺点：
+ *   1. 可能被反射 / 反序列化破坏
  *
  * @Author yuc
  */
