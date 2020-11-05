@@ -9,6 +9,7 @@ package design_patterns.singleton;
  * 3. 高效
  * 缺点：
  * 1. 实现较复杂
+ * 2. 可能被反射 / 反序列化破坏
  *
  * @Author Yuc
  */
