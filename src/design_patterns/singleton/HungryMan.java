@@ -8,6 +8,7 @@ package design_patterns.singleton;
  *   3. 实现简单
  * 缺点：
  *   1. 类加载时就初始化，浪费内存
+ *   2. 可能被反射 / 反序列化破坏
  *
  * @Author yuc
  */
