@@ -13,6 +13,7 @@ public class Tester {
 
     public static void LazyManWithoutDCLTester() throws InterruptedException {
         System.out.println("懒汉式不带DCL测试开始");
+        // 开启20个线程，获取懒汉式不带DCL的实例并打印其地址
         for(int i=0;i<20;++i){
             new Thread(()->{
                 System.out.println(LazyManWithoutDCL.getInstance());
