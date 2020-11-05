@@ -25,7 +25,7 @@ public class LazyManWithDCL {
      */
     private LazyManWithDCL() {};
 
-    public LazyManWithDCL getInstance(){
+    public static LazyManWithDCL getInstance(){
         // 第一重校验
         if(instance == null){
             synchronized (LazyManWithDCL.class){
