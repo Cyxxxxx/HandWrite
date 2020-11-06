@@ -5,7 +5,7 @@ package design_patterns.factory.product;
  *
  * @Author yuc
  */
-public class Book implements Product{
+public class Book extends Stationery {
 
     private int price = 5;
 
