@@ -1,4 +1,6 @@
-package design_patterns.factory.product;
+package design_patterns.factory.product.stationery;
+
+import design_patterns.factory.product.Product;
 
 public abstract class Stationery implements Product {
     static {

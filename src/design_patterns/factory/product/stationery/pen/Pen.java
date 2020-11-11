@@ -1,4 +1,6 @@
-package design_patterns.factory.product;
+package design_patterns.factory.product.stationery.pen;
+
+import design_patterns.factory.product.stationery.Stationery;
 
 /**
  * 产品 - 钢笔

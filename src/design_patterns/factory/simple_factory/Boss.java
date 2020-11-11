@@ -1,7 +1,7 @@
 package design_patterns.factory.simple_factory;
 
-import design_patterns.factory.product.Book;
-import design_patterns.factory.product.Pen;
+import design_patterns.factory.product.stationery.book.Book;
+import design_patterns.factory.product.stationery.pen.Pen;
 import design_patterns.factory.product.Product;
 
 /**

@@ -1,6 +1,6 @@
 package design_patterns.factory.simple_factory;
 
-import design_patterns.factory.product.Stationery;
+import design_patterns.factory.product.stationery.Stationery;
 
 /**
  * 简单工厂模式

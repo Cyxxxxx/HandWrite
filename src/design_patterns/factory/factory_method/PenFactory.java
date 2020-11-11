@@ -1,6 +1,6 @@
-package design_patterns.factory.common_factory;
+package design_patterns.factory.factory_method;
 
-import design_patterns.factory.product.Pen;
+import design_patterns.factory.product.stationery.pen.Pen;
 
 /**
  * 钢笔工厂

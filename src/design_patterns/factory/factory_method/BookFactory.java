@@ -1,6 +1,6 @@
-package design_patterns.factory.common_factory;
+package design_patterns.factory.factory_method;
 
-import design_patterns.factory.product.Book;
+import design_patterns.factory.product.stationery.book.Book;
 
 public class BookFactory implements StationeryFactory{
     @Override

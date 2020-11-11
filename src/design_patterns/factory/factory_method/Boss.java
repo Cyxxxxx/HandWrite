@@ -1,9 +1,6 @@
-package design_patterns.factory.common_factory;
+package design_patterns.factory.factory_method;
 
-import design_patterns.factory.product.Book;
-import design_patterns.factory.product.Pen;
 import design_patterns.factory.product.Product;
-import design_patterns.factory.simple_factory.StationeryFactory;
 
 /**
  * 老板操作工厂，生产产品

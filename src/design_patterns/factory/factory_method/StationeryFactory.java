@@ -1,6 +1,4 @@
-package design_patterns.factory.common_factory;
-
-import design_patterns.factory.product.Product;
+package design_patterns.factory.factory_method;
 
 /**
  * 常规的工厂方法通过实现接口来扩展
