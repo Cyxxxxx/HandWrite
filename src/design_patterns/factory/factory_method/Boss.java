@@ -15,13 +15,23 @@ public class Boss {
         // 创建本子工厂实例
         BookFactory bookFactory = new BookFactory();
         // 制造钢笔
-        Product pen = penFactory.create();
+        Product pen = null;
+        try {
+            pen = penFactory.create("black");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         System.out.println("————钢笔制造完毕，属性如下————");
         pen.getName();
         pen.getPrice();
 
         // 制造本子
-        Product book = bookFactory.create();
+        Product book = null;
+        try {
+            book = bookFactory.create("comic");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         System.out.println("————本子制造完毕，属性如下————");
         book.getName();
         book.getPrice();
