@@ -1,5 +1,6 @@
-package design_patterns.factory.factory_method;
+package design_patterns.factory.factory_method.factory;
 
+import design_patterns.factory.product.stationery.Stationery;
 import design_patterns.factory.product.stationery.book.Book;
 
 /**
@@ -14,5 +15,5 @@ public interface StationeryFactory {
      *
      * @return
      */
-    Object create(String type) throws Exception;
+    Stationery create() throws Exception;
 }

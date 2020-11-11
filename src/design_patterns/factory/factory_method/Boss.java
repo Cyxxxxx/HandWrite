@@ -1,6 +1,11 @@
 package design_patterns.factory.factory_method;
 
+import design_patterns.factory.factory_method.factory.book_factory.AbstractBookFactory;
+import design_patterns.factory.factory_method.factory.book_factory.NoteBookFactory;
+import design_patterns.factory.factory_method.factory.pen_factory.AbstractPenFactory;
+import design_patterns.factory.factory_method.factory.pen_factory.BlackPenFactory;
 import design_patterns.factory.product.Product;
+import design_patterns.factory.product.stationery.Stationery;
 
 /**
  * 老板操作工厂，生产产品
@@ -10,14 +15,14 @@ import design_patterns.factory.product.Product;
 public class Boss {
 
     public static void main(String[] args) {
-        // 创建钢笔工厂实例
-        PenFactory penFactory = new PenFactory();
-        // 创建本子工厂实例
-        BookFactory bookFactory = new BookFactory();
+        // 创建黑色钢笔工厂实例
+        AbstractPenFactory blackPenFactory = new BlackPenFactory();
+        // 创建笔记本工厂实例
+        AbstractBookFactory noteBookFactory = new NoteBookFactory();
         // 制造钢笔
-        Product pen = null;
+        Stationery pen = null;
         try {
-            pen = penFactory.create("black");
+            pen = blackPenFactory.create();
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -26,9 +31,9 @@ public class Boss {
         pen.getPrice();
 
         // 制造本子
-        Product book = null;
+        Stationery book = null;
         try {
-            book = bookFactory.create("comic");
+            book = noteBookFactory.create();
         } catch (Exception e) {
             e.printStackTrace();
         }
