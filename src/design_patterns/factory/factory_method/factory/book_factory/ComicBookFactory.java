@@ -5,7 +5,7 @@ import design_patterns.factory.product.stationery.book.ComicBook;
 
 public class ComicBookFactory extends AbstractBookFactory {
     @Override
-    public Stationery create() throws Exception {
+    public Stationery create() {
         return new ComicBook();
     }
 }

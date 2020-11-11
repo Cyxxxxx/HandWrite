@@ -1,7 +1,6 @@
 package design_patterns.factory.factory_method.factory;
 
 import design_patterns.factory.product.stationery.Stationery;
-import design_patterns.factory.product.stationery.book.Book;
 
 /**
  * 常规的工厂方法通过实现接口来扩展
@@ -15,5 +14,5 @@ public interface StationeryFactory {
      *
      * @return
      */
-    Stationery create() throws Exception;
+    Stationery create();
 }
