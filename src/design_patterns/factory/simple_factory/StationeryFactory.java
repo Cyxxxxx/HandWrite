@@ -5,12 +5,7 @@ import design_patterns.factory.product.stationery.Stationery;
 /**
  * 简单工厂模式
  *
- * 假设我们只要开一个文具厂
- * 文具厂中只有笔和本子两种产品
- * 那么我们用简单工厂模式来实现是完全没有问题的
  *
- * 优点：简单
- * 缺点：扩展性差
  *
  * @Author yuc
  */
