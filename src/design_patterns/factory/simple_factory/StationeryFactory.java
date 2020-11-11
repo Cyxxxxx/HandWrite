@@ -1,10 +1,9 @@
 package design_patterns.factory.simple_factory;
 
-import design_patterns.factory.product.Product;
+import design_patterns.factory.product.Stationery;
 
 /**
  * 简单工厂模式
- * 静态工厂
  *
  * 假设我们只要开一个文具厂
  * 文具厂中只有笔和本子两种产品
@@ -24,10 +23,10 @@ public class StationeryFactory {
      * @param <T>
      * @return
      */
-    public static <T extends Product> T createProduct(Class<T> clazz) {
-        Product product = null;
+    public static <T extends Stationery> T createProduct(Class<? extends Stationery> clazz) {
+        Stationery product = null;
         try {
-            product = (Product) Class.forName(clazz.getName()).newInstance();
+            product = (Stationery) Class.forName(clazz.getName()).newInstance();
         } catch (Exception e) {
             System.out.println("产品生产错误！");
         }
