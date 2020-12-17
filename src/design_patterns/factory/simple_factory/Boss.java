@@ -13,7 +13,7 @@ public class Boss {
 
     public static void main(String[] args) {
         // 制造钢笔
-        Product pen = StationeryFactory.createProduct(Pen.class);
+        Product pen = StationeryFactory.createProduct(Pen.class,1);
         System.out.println("————钢笔制造完毕，属性如下————");
         pen.getName();
         pen.getPrice();

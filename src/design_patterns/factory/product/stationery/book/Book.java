@@ -9,7 +9,13 @@ import design_patterns.factory.product.stationery.Stationery;
  */
 public class Book extends Stationery {
 
-    private int price = 5;
+    public Book() {
+        super();
+    }
+
+    public Book(int price) {
+        super(price);
+    }
 
     @Override
     public void getName() {

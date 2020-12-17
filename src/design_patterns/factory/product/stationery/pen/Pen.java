@@ -9,7 +9,13 @@ import design_patterns.factory.product.stationery.Stationery;
  */
 public class Pen extends Stationery {
 
-    private int price = 3;
+    public Pen() {
+        super();
+    }
+
+    public Pen(int price) {
+        super(price);
+    }
 
     @Override
     public void getName() {
