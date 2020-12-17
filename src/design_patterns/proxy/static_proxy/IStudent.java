@@ -1,4 +1,4 @@
-package design_patterns.proxy.common;
+package design_patterns.proxy.static_proxy;
 
 /**
  * @author yuc
