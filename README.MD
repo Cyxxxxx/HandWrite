@@ -1,9 +1,8 @@
 # HandWrite
-本项目旨在以手写代码的方式理解~~面试常用的~~数据结构/算法
+本项目旨在以手写代码的方式理解~~面试常用的~~数据结构 / 算法 / 设计模式
 
-从源码的角度学习数据结构/算法会理解得比较深
+学完理论再来从源码的角度学习数据结构 / 算法 / 设计模式会理解得比较深
 
-建议先看基本概念再考虑看源码
 
 Email: 732298225@qq.com
 
@@ -23,6 +22,16 @@ Blog: https://blog.csdn.net/Yuc0114
  - [双栈实现队列](https://github.com/Cyxxxxx/HandWrite/blob/master/src/data_structure/queue/StackImplQueue.java)
 
 ## 算法
+### 排序算法
+ - [冒泡排序 / Bubble Sort](https://github.com/Cyxxxxx/HandWrite/blob/master/src/algorithm/sort/Bubble.java)
+ - [选择排序 / Selection Sort](https://github.com/Cyxxxxx/HandWrite/blob/master/src/algorithm/sort/Selection.java)
+ - [插入排序 / Insert Sort](https://github.com/Cyxxxxx/HandWrite/blob/master/src/algorithm/sort/Insert.java)
+ - [希尔排序 / Shell Sort](https://github.com/Cyxxxxx/HandWrite/blob/master/src/algorithm/sort/Shell.java)
+ - [归并排序 / Merge Sort](https://github.com/Cyxxxxx/HandWrite/blob/master/src/algorithm/sort/Merge.java)
+ - [快速排序 / Quick Sort](https://github.com/Cyxxxxx/HandWrite/blob/master/src/algorithm/sort/Quick.java)
+ - [堆排序 / Heap Sort](https://github.com/Cyxxxxx/HandWrite/blob/master/src/algorithm/sort/Heap.java)
+ - [箱排序 / Bin Sort](https://github.com/Cyxxxxx/HandWrite/blob/master/src/algorithm/sort/Bin.java)
+ - [基数排序 / Radix Sort](https://github.com/Cyxxxxx/HandWrite/blob/master/src/algorithm/sort/Radix.java)
 ### 链表相关
  - [反转链表](https://github.com/Cyxxxxx/HandWrite/tree/master/src/algorithm/linked_list/reverse)
 
